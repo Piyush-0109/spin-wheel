@@ -1,0 +1,114 @@
+.wheelWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: black;
+    height: 100vh;
+}
+
+.circle {
+    position: relative;
+    width: 40rem;
+    height: 40rem;
+    border: 5px solid #333333;
+    padding: 0;
+    margin: 1rem auto;
+    border-radius: 50%;
+    list-style: none;
+    overflow: hidden;
+    box-shadow: 0 0 30px #fff, 0 0 10px #fff,
+        0 0 20px #FF5F1F,
+        0 0 30px #FF5F1F,
+        0 0 40px #FF5F1F,
+        0 0 50px #FF5F1F;
+    animation: blink 0.9s infinite alternate;
+}
+
+@keyframes blink {
+    100% {
+        box-shadow: 0 0 40px #fff,
+            0 0 10px #FF5F1F,
+            0 0 20px #FF5F1F,
+            0 0 40px #FF5F1F,
+            0 0 70px #FF5F1F,
+            0 0 80px #FF5F1F;
+    }
+}
+
+li {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    transform-origin: 0% 100%;
+    border: none;
+}
+
+.text {
+    position: absolute;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    text-align: center;
+    display: block;
+    transform: skewY(60deg) rotate(15deg);
+    padding-top: 20px;
+    pointer-events: none;
+    color: white;
+    font-family: fantasy;
+    pointer-events: none;
+    font-size: 1.5rem;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 50px solid white;
+    position: absolute;
+    left: 49%;
+    top: -10px;
+    z-index: 1;
+}
+
+.start-rotate {
+    animation: start-rotate 1s linear infinite;
+}
+
+@keyframes start-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        transform: rotate(360deg);
+    }
+}
+
+.stop-rotate {
+    animation-play-state: paused;
+}
+
+.spin-button {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    outline: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    background-size: cover;
+    font-family: fantasy;
+    color: white;
+    font-size: 1.5rem;
+    border: 3px solid white;
+}
